@@ -57,7 +57,7 @@ def login():
 @app.route("/start", methods=["POST"])
 def start():
     subprocess.call("pkill -f index.py", shell=True)
-    subprocess.Popen("python3 /bot/index.py", shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
+    subprocess.Popen("python3 bot/index.py", shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
     return "<meta http-equiv='refresh' content='0; url=/' />"
 
 
