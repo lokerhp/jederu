@@ -34,6 +34,8 @@ virtualenv jederu
 
 screen
 
+cd jederu/
+
 source jederu/bin/activate
 
 pip3 install flask pyyaml gunicorn
