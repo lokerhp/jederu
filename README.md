@@ -38,7 +38,7 @@ cd jederu/
 
 source jederu/bin/activate
 
-pip3 install flask pyyaml gunicorn
+pip3 install flask pyyaml gunicorn discord asyncio
 
 wget https://jederu.ga/download/latest.zip
 
