@@ -1,0 +1,14 @@
+<!DOCTYPE HTML5>
+<html>
+  <head>
+    <title>Dit is een profiel pagina</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for("static", filename="main.css") }}">
+  </head>
+  <body>
+    {% if naam %}
+      Dit is de profiel pagina van {{ naam }}
+    {% else %}
+      Je bent nog niet ingelogt!
+    {% endif %}
+  </body>
+</html>
