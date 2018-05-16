@@ -1,5 +1,5 @@
 # jederu
-This is a little panel I created for hosting 
+This is a little panel I created for hosting a python discord bot
 This is how to install it:
 sudo apt-get update
 
