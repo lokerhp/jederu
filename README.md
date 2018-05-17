@@ -1,7 +1,15 @@
 # jederu
 This is a little panel I created for hosting a python discord bot
 This is how to install it:
+
+
 sudo apt-get update
+
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+
+sudo apt-get install -y nodejs
+
+npm install discord.js
 
 sudo apt-get install nginx python3-pip unzip
 
@@ -25,23 +33,22 @@ sudo ln -s /etc/nginx/sites-available/jederu /etc/nginx/sites-enabled/jederu
 
 sudo service nginx restart
 
-pip3 install virtualenv
+sudo pip3 install virtualenv
 
-mkdir jederu
-cd jederu/
+sudo mkdir jederu
+sudo cd jederu/
 
-virtualenv jederu
+sudo virtualenv jederu
 
-screen
+sudo screen
 
-cd jederu/
+sudo source jederu/bin/activate
 
-source jederu/bin/activate
+sudo pip3 install flask pyyaml gunicorn
 
-pip3 install flask pyyaml gunicorn discord asyncio
+sudo wget https://jederu.ga/download/latest.zip
 
-wget https://jederu.ga/download/latest.zip
+sudo unzip latest.zip
 
-unzip latest.zip
+sudo gunicorn main:app
 
-gunicorn main:app
