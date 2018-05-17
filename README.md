@@ -52,3 +52,10 @@ sudo unzip latest.zip
 
 sudo gunicorn main:app
 
+
+
+the default username: admin
+the default password: test123
+you can edit the usernames and/or passwords or create new accounts in data/accounts.yml
+
+Note: you can't use more than 1 account with the same name!!
