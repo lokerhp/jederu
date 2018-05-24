@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Jederu » Menu</title>
+    <title>Jederu » Controle</title>
     <link rel="shortcut icon" href="{{ url_for('static', filename='jederu.ico') }}">
+    <link rel="favicon" type="image/png" href="img/jederu.png"/>
     <link rel="stylesheet" href="https://bootswatch.com/4/united/bootstrap.min.css" crossorigin="anonymous">
   </head>
   <body>
@@ -19,19 +20,16 @@
 
       <div class="collapse navbar-collapse" id="navbarColor02">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
+          <li class="nav-item ">
             <a class="nav-link" href="/">Menu <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item active">
             <a class="nav-link" href="control">Controle</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="upload">Upload</a>
           </li>
         </ul>
-        <div style="margin-right:5%">
-          <p style="color:white;">Welkom {{ username }}!</p>
-        </div>
         {% if username == "admin" %}
         <form class="form-inline my-2 my-lg-0" action="admin" method="get" style="padding-right: 1%">
           <button class="btn btn-secondary my-2 my-sm-0" type="submit">Admin Panel</button>
@@ -43,7 +41,27 @@
       </div>
     </nav>
     <div class="container">
-      <h3>Dit is het menu van Jederu, vanaf hier kan je naar andere pagina's gaan</h3>
+      <h1>Python:</h1>
+      <form action="start/{{ username }}/py" method="post">
+        <input type="submit" name="Start" value="Start" class="btn btn-success" style="width:100%">
+      </form>
+      <form action="stop/{{ username }}/py" method="post">
+        <input type="submit" name="Stop" value="Stop" class="btn btn-danger" style="width:100%">
+      </form>
+      <h1>JavaScript:</h1>
+      <form action="start/{{ username }}/js" method="post">
+        <input type="submit" name="Start" value="Start" class="btn btn-success" style="width:100%">
+      </form>
+      <form action="stop/{{ username }}/js" method="post">
+        <input type="submit" name="Stop" value="Stop" class="btn btn-danger" style="width:100%">
+      </form>
+      <h1>Java:</h1>
+      <form action="start/{{ username }}/java" method="post">
+        <input type="submit" name="Start" value="Start" class="btn btn-success" style="width:100%">
+      </form>
+      <form action="stop/{{ username }}/java" method="post">
+        <input type="submit" name="Stop" value="Stop" class="btn btn-danger" style="width:100%">
+      </form>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

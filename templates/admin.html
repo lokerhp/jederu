@@ -12,7 +12,7 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <img src="{{ url_for('static', filename="jederu.png") }}" width="30" height="30" class="d-inline-block align-top" alt="" style="margin-right:20px">
-      <a class="navbar-brand" href="/">Jederu</a>
+      <a class="navbar-brand" href="/admin">Jederu Admin</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -20,30 +20,40 @@
       <div class="collapse navbar-collapse" id="navbarColor02">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="/">Menu <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/admin">Menu <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="control">Controle</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="upload">Upload</a>
+            <a class="nav-link" href="/admin/accounts">Accounts</a>
           </li>
         </ul>
-        <div style="margin-right:5%">
-          <p style="color:white;">Welkom {{ username }}!</p>
-        </div>
-        {% if username == "admin" %}
-        <form class="form-inline my-2 my-lg-0" action="admin" method="get" style="padding-right: 1%">
-          <button class="btn btn-secondary my-2 my-sm-0" type="submit">Admin Panel</button>
+        <form class="form-inline my-2 my-lg-0" action="/" method="get" style="padding-right: 1%">
+          <button class="btn btn-secondary my-2 my-sm-0" type="submit">Normaal Panel</button>
         </form>
-        {% endif %}
-        <form class="form-inline my-2 my-lg-0" action="logout/{{ username }}" method="post">
+        <form class="form-inline my-2 my-lg-0" action="/logout/{{ username }}" method="post">
           <button class="btn btn-secondary my-2 my-sm-0" type="submit">Log uit</button>
         </form>
       </div>
     </nav>
     <div class="container">
-      <h3>Dit is het menu van Jederu, vanaf hier kan je naar andere pagina's gaan</h3>
+      <h3>Dit is het admin panel van Jederu, vanaf hier kan je naar andere administratieve pagina's gaan</h3>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div style="padding: 5%">
+        <h3>Totaal Memory:</h3>
+        {{ tot_m }}
+      </div>
+      <div style="padding: 5%">
+        <h3>Gebruikt Memory:</h3>
+        {{ used_m }}
+      </div>
+      <div style="padding: 5%">
+        <h3>Vrij memory:</h3>
+        {{ free_m }}
+      </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
